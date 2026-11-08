@@ -29,10 +29,14 @@ jobs:
 
       - name: Run Django system check
         env:
-          GEMINI_API_KEY: test-placeholder
+  GEMINI_API_KEY: test-placeholder
+  DJANGO_SECRET_KEY: test-django-secret-key-for-ci-only
+  DJANGO_DEBUG: "False"
         run: python manage.py check
 
       - name: Run automated tests
         env:
-          GEMINI_API_KEY: test-placeholder
+  GEMINI_API_KEY: test-placeholder
+  DJANGO_SECRET_KEY: test-django-secret-key-for-ci-only
+  DJANGO_DEBUG: "False"
         run: python manage.py test chat
